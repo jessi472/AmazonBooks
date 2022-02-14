@@ -9,8 +9,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
+
+//Amazon Books Project Start: February 11th, 2022
 namespace AmazonBooks.Infrastructures
 {
+
+    //use div tag to create dynamic page numbers 
     [HtmlTargetElement("div", Attributes ="page-number")]
     public class PaginationTagHelper: TagHelper
     {
@@ -25,6 +29,7 @@ namespace AmazonBooks.Infrastructures
         public PageInfo PageNumber { get; set; }
         public string PageAction { get; set; }
 
+        //Style dynamic pages
         public bool PageClassesEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
@@ -32,6 +37,7 @@ namespace AmazonBooks.Infrastructures
 
         public override void Process (TagHelperContext thc, TagHelperOutput tho)
         {
+            //use a tag to facilitate creating the div page number tags
             IUrlHelper uh = uhf.GetUrlHelper(vc);
             TagBuilder final = new TagBuilder("div");
 

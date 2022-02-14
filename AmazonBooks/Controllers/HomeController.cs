@@ -13,6 +13,8 @@ using AmazonBooks.Models;
 using Microsoft.AspNetCore.Mvc;
 using AmazonBooks.Models.ViewModels;
 
+
+//Amazon Books Project Start: February 11th, 2022
 namespace AmazonBooks.Controllers
 {
     public class HomeController : Controller
@@ -23,6 +25,7 @@ namespace AmazonBooks.Controllers
             repo = temp;
         }
 
+        //Create each page of books
         public IActionResult Index(int pageNum = 1)
         {
             int pageSize = 10;

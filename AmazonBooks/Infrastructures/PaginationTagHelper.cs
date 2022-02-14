@@ -22,7 +22,7 @@ namespace AmazonBooks.Infrastructures
         [ViewContext]
         [HtmlAttributeNotBound]
         public ViewContext vc { get; set; } 
-        public PageInfo PageBlah{ get; set; }
+        public PageInfo PageNumber { get; set; }
         public string PageAction { get; set; }
 
         public bool PageClassesEnabled { get; set; } = false;
@@ -35,7 +35,7 @@ namespace AmazonBooks.Infrastructures
             IUrlHelper uh = uhf.GetUrlHelper(vc);
             TagBuilder final = new TagBuilder("div");
 
-            for (int i = 1; i< PageBlah.TotalPages; i++)
+            for (int i = 1; i <= PageNumber.TotalPages; i++)
             {
                 TagBuilder tb = new TagBuilder("a");
                 tb.Attributes["href"] = uh.Action(PageAction, new { pageNum = i });
@@ -43,7 +43,7 @@ namespace AmazonBooks.Infrastructures
                 if (PageClassesEnabled)
                 {
                     tb.AddCssClass(PageClass);
-                    tb.AddCssClass(i == PageBlah.CurrentPage
+                    tb.AddCssClass(i == PageNumber.CurrentPage
                         ? PageClassSelected : PageClassNormal);
                 }
 

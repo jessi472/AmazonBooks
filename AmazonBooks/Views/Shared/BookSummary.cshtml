@@ -19,7 +19,15 @@
 
     </ul>
 
-    <br />
+    <form method="post" asp-page="/BuyBook">
+        <input type="hidden" asp-for="@Model.BookId"/>
+        <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"/>
+
+        <span class="card-text">
+            <button type="submit" class="btn btn-success btn-sm float-end">Buy Book</button>
+        </span>
+    </form>
+
 </div>
 
 

@@ -30,7 +30,7 @@ namespace AmazonBooks.Infrastructures
         public string PageAction { get; set; }
 
         //Style dynamic pages
-        public bool PageClassesEnabled { get; set; } = false;
+        public bool PageClassEnabled { get; set; } = false;
         public string PageClass { get; set; }
         public string PageClassNormal { get; set; }
         public string PageClassSelected { get; set; }
@@ -46,7 +46,7 @@ namespace AmazonBooks.Infrastructures
                 TagBuilder tb = new TagBuilder("a");
                 tb.Attributes["href"] = uh.Action(PageAction, new { pageNum = i });
 
-                if (PageClassesEnabled)
+                if (PageClassEnabled)
                 {
                     tb.AddCssClass(PageClass);
                     tb.AddCssClass(i == PageNumber.CurrentPage

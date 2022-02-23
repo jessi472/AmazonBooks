@@ -19,8 +19,8 @@
 
     </ul>
 
-    <form method="post">
-        <input type="hidden" asp-page="@Model.BookId"/>
+    <form method="post" asp-page="/BuyBook">
+        <input type="hidden" asp-for="@Model.BookId"/>
         <input type="hidden" name="returnUrl" value="@ViewContext.HttpContext.Request.PathAndQuery()"/>
 
         <span class="card-text">

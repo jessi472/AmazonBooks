@@ -23,15 +23,16 @@ namespace AmazonBooks2.Pages
 
         public string ReturnUrl { get; set; }
 
-        public void OnGet(string returnUrl)
+        public void OnGet(Basket b, string returnUrl)
         {
-            ReturnUrl = returnUrl ?? "/"; 
+            ReturnUrl = returnUrl ?? "/";
             basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
         }
 
-        public IActionResult onPost(int bookId, string returnUrl)
+        public IActionResult OnPost(int bookId, string returnUrl)
         {
             Book b = repo.Books.FirstOrDefault(x => x.BookId == bookId);
+            //basket = new Basket();
             basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
             basket.AddItem(b, 1);
             HttpContext.Session.SetJson("basket", basket);

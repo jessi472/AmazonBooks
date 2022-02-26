@@ -9,7 +9,7 @@ namespace AmazonBooks2.Models
     public class Basket
     {
         public List<BasketLineItem> Items { get; set; }= new List<BasketLineItem>();
-        public void AddItem (Book book, int qty)
+        public virtual void AddItem (Book book, int qty)
         {
             BasketLineItem line = Items
                 .Where(b => b.Book.BookId == book.BookId)
@@ -27,7 +27,17 @@ namespace AmazonBooks2.Models
             }
         }
 
-        public double CalculateTotal()
+        public virtual void RemoveItem(Book b)
+        {
+            Items.RemoveAll(x => x.Book.BookId == b.BookId);
+        }
+
+        public virtual void ClearBasket()
+        {
+            Items.Clear();
+        }
+
+        public virtual double CalculateTotal()
         {
             double sum = Items.Sum(x => x.Quantity * x.Book.Price);
             return sum;

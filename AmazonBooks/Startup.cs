@@ -35,6 +35,7 @@ namespace AmazonBooks
             });
 
             services.AddScoped<IAmazonBooksRepository, EFAmazonBooksRepository>();
+            services.AddScoped<ICheckoutRepository, EFCheckoutRepository>();
 
             services.AddRazorPages();
             

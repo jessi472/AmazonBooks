@@ -19,7 +19,7 @@ namespace AmazonBooks.Models
         }
 
         public DbSet<Book> Books { get; set; }
-        public DbSet<OrderBooks> Orders { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         
     }

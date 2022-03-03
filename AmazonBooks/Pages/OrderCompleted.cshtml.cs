@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace AmazonBooks2.Pages
 {
-    public class CheckoutCompletedModel : PageModel
+    public class OrderCompletedModel : PageModel
     {
         public void OnGet()
         {

@@ -1,4 +1,5 @@
 using AmazonBooks.Models;
+using AmazonBooks2.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -34,7 +35,11 @@ namespace AmazonBooks
             });
 
             services.AddScoped<IAmazonBooksRepository, EFAmazonBooksRepository>();
-            services.AddScoped<ICheckoutRepository, EFCheckoutRepository>();
+            services.AddScoped<IOrderRepository, EFOrderRepository>();
+
+            services.AddScoped<Basket>(x => SessionBasket.GetBasket(x));
+
+            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddRazorPages();
             

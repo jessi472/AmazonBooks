@@ -14,10 +14,9 @@ namespace AmazonBooks2.Pages
     {
         private IAmazonBooksRepository repo { get; set; }
 
-        public BuyBookModel (IAmazonBooksRepository temp, Basket bas)
+        public BuyBookModel (IAmazonBooksRepository temp)
         {
             repo = temp;
-            basket = bas;
         }
 
         public Basket basket { get; set; }
@@ -27,21 +26,16 @@ namespace AmazonBooks2.Pages
         public void OnGet(Basket b, string returnUrl)
         {
             ReturnUrl = returnUrl ?? "/";
+            basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
         }
 
         public IActionResult OnPost(int bookId, string returnUrl)
         {
             Book b = repo.Books.FirstOrDefault(x => x.BookId == bookId);
-            //basket = new Basket()
+            //basket = new Basket();
+            basket = HttpContext.Session.GetJson<Basket>("basket") ?? new Basket();
             basket.AddItem(b, 1);
-            
-            return RedirectToPage(new { ReturnUrl = returnUrl });
-        }
-
-        public IActionResult OnPostRemove(int bookId, string returnUrl)
-        {
-            basket.RemoveItem(basket.Items.First(x => x.Book.BookId == bookId).Book);
-
+            HttpContext.Session.SetJson("basket", basket);
             return RedirectToPage(new { ReturnUrl = returnUrl });
         }
     }

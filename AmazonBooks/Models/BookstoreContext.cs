@@ -1,4 +1,5 @@
 ﻿using System;
+using AmazonBooks2.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
@@ -18,6 +19,7 @@ namespace AmazonBooks.Models
         }
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<Order> Orders { get; set; }
 
         
     }

@@ -8,6 +8,9 @@ using AmazonBooks2.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 
+//Jessica Kinghorn
+//Amazon Books Project Start: February 11th 2022
+
 namespace AmazonBooks2.Pages
 {
     public class BuyBookModel : PageModel

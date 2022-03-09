@@ -1,4 +1,6 @@
-﻿
+﻿<!--//Jessica Kinghorn
+//Amazon Books Project Start: February 11th 2022-->
+
 @{
 }
 @model IEnumerable<string>
@@ -6,11 +8,11 @@
 <div class="d-grid gap-2">
     <a asp-controller="Home" asp-action="Index" asp-route-category="" asp-route-pageNumber="1" class="btn btn-outline-secondary">Home</a>
 </div>
-    @foreach (string c in Model)
-    {
-        <div class="d-grid gap-2">
-            <a asp-controller="Home" asp-action="Index" asp-route-category="@c"
-               class="btn @(ViewBag.SelectCategory == c ? "btn-primary": "btn-outline-secondary") "
-               asp-route-pageNumber="1">@c</a>
-        </div>
-    }
+@foreach (string c in Model)
+{
+    <div class="d-grid gap-2">
+        <a asp-controller="Home" asp-action="Index" asp-route-category="@c"
+           class="btn @(ViewBag.SelectCategory == c ? "btn-primary": "btn-outline-secondary") "
+           asp-route-pageNumber="1">@c</a>
+    </div>
+}

@@ -13,7 +13,7 @@
                 <tr>
                     <td>@o.Name</td>
                     <td>@o.Zipcode</td>
-                    <th>Project</th>
+                    <th>Book Title</th>
                     <th>Quantity</th>
                     <td>
                         <button class="btn btn-sm btn-danger" @onclick="@(x=>OrderSelected.InvokeAsync(o.OrderId))">
@@ -26,7 +26,7 @@
                 {
                     <tr>
                         <td colspan="2"></td>
-                        <td>@bli.Book.BookId</td>
+                        <td>@bli.Book.Title</td>
                         <td>@bli.Quantity</td>
                     </tr>
                 }

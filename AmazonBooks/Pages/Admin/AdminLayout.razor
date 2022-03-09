@@ -13,21 +13,34 @@
         <div class="col-3 ">
             
             <div class="d-grid gap-2">
-                <NavLink class="btn btn-outline-primary" href="/admin/books"
+                <NavLink class="display-6" href="/admin/books"
                          ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">
                     Books
                 </NavLink>
 
-                <NavLink class="btn btn-outline-primary" href="/admin/orders"
+                <NavLink class="display-6" href="/admin/orders"
                          ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">
                     Orders
                 </NavLink>
+
+                <div class="toast show">
+                    <div class="toast-header">
+                        Administration
+                        
+                    </div>
+                    <div class="toast-body">
+                        Click Books to see all the books in the database.
+                        Click Orders to see all orders, shipped and unshipped.
+                    </div>
+                </div>
+
+
             </div>
 
 
         </div>
 
-        <div class="col">
+        <div class="col bg-body">
            
             @Body
 

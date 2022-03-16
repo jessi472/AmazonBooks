@@ -29,27 +29,47 @@
         <div class="col-3 ">
             
             <div class="d-grid gap-2">
-                <NavLink class="display-6" href="/admin/books"
-                         ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">
-                    Books
-                </NavLink>
 
-                <NavLink class="display-6" href="/admin/orders"
-                         ActiveClass="btn-primary text-white" Match="NavLinkMatch.Prefix">
-                    Orders
-                </NavLink>
+                <div class="card" style="width:18rem;">
 
-                <div class="toast show">
+                    <ul class="list-group list-group-flush">
+
+                        <li class="list-group-item">
+                            <NavLink class="" href="/admin/books"
+                                     ActiveClass="btn-primary @*text-white*@" Match="NavLinkMatch.Prefix">
+                                Books
+                            </NavLink>
+                        </li>
+
+                        <li class="list-group-item">
+                            <NavLink class="" href="/admin/orders"
+                                     ActiveClass="btn-primary @*text-white*@" Match="NavLinkMatch.Prefix">
+                                Orders
+                            </NavLink>
+                        </li>
+                    </ul>
+                </div>
+
+
+
+                <div class="toast show p-1" style="width:18rem;">
                     <div class="toast-header">
                         Administration
-                        
+
                     </div>
-                    <div class="toast-body">
+                    <div class="toast-body p-1">
                         Click Books to see all the books in the database.
                         Click Orders to see all orders, shipped and unshipped.
                     </div>
                 </div>
 
+                <div style="width:18rem;">
+                    <blockquote class="blockquote text-center p-1">
+                        <p class="mb-0">Books aren’t dying, they’re just going digital.</p>
+                        <br />
+                        <footer class="blockquote-footer">Jeff Bezos</footer>
+                    </blockquote>
+                </div>
 
             </div>
 
